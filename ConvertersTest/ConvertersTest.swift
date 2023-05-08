@@ -50,5 +50,13 @@ final class ConvertersTest: XCTestCase {
         XCTAssertEqual(actual, expect)
     }
     
+    // Convert a decimal returns a decimal result
+    func test_convertDecimal1050_returnsDecimal1134(){
+        let actual = sut.convertEuroToUSD(euro: "10.50")
+        let expect = "$11.34"
+        
+        XCTAssertEqual(actual, expect)
+    }
+    
 
 }
