@@ -17,5 +17,16 @@ final class ConvertersTest: XCTestCase {
         
         XCTAssertEqual(actual, expect)
     }
+    
+    func test_convertNagative10_returnsErrorMessage(){
+        let sut = Converters() // sut => system under testing
+        
+        let actual = sut.convertEuroToUSD(euro: "-10")
+        let expect = "Please enter a positive number."
+        
+        XCTAssertEqual(actual, expect)
+    }
+
+    
 
 }
