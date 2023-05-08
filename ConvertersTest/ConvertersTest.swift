@@ -18,7 +18,7 @@ final class ConvertersTest: XCTestCase {
         sut = nil
     }
     
-
+    // Create a simple conversion with a positive number
     func test_convert10_returns1080(){
         let actual = sut.convertEuroToUSD(euro: "10")
         let expect = "$10.80"
@@ -26,6 +26,7 @@ final class ConvertersTest: XCTestCase {
         XCTAssertEqual(actual, expect)
     }
     
+    // Negative number returns an error message
     func test_convertNagative10_returnsErrorMessage(){
         let actual = sut.convertEuroToUSD(euro: "-10")
         let expect = "Please enter a positive number."
@@ -33,6 +34,21 @@ final class ConvertersTest: XCTestCase {
         XCTAssertEqual(actual, expect)
     }
 
+    // Empty input returns an error message
+    func test_convertEmptyString_returnsErrorMessage(){
+        let actual = sut.convertEuroToUSD(euro: "")
+        let expect = "Please enter a positive number."
+        
+        XCTAssertEqual(actual, expect)
+    }
+    
+    // Invalid input returns an error message
+    func test_convertInvalidInput_returnsErrorMessage(){
+        let actual = sut.convertEuroToUSD(euro: "Hello world")
+        let expect = "Please enter a positive number."
+        
+        XCTAssertEqual(actual, expect)
+    }
     
 
 }
