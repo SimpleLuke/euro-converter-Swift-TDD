@@ -16,7 +16,7 @@ class Converters{
             return "Please enter a positive number."
         }
         
-        if euroValue > 1_000_000 {
+        if euroValue >= 1_000_000 {
             return "Value too big to convert."
         }
         
